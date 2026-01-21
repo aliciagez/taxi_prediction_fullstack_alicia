@@ -20,31 +20,33 @@ I did random forest regression since doing classifications for the price does no
 EVALUATION OF MODELS: 
 
 Linjer regression with filled nan values: 
-Mean absolut error 9.510847547245534 
-Mean squarerd error 215.57370217114592
-Root Mean squared error 14.682428347216476
-
-Baseline = np.float64(59.6996599055302), 25.07280855350934
+- Mean absolut error 9.510847547245534 
+- Mean squarerd error 215.57370217114592
+- Root Mean squared error 14.682428347216476
+- Baseline = np.float64(59.6996599055302), 25.07280855350934
 
 Linjer regression with removed nan values:
-Mean absolut error 9.501317345842137 
-Mean squarerd error 271.639742629564
-Root Mean squared error 16.481496977810117
-
-Baseline = np.float64(57.1563652603273), 25.763832419671406
+- Mean absolut error 9.501317345842137 
+- Mean squarerd error 271.639742629564
+- Root Mean squared error 16.481496977810117
+- Baseline = np.float64(57.1563652603273), 25.763832419671406
 
 Logistic reregssion with removed nan: 
-accuray: 0.7186147186147186
-
+ - accuray: 0.7186147186147186
 
 Logistic reregssion with filled nan: 
-accuray: 0.6847133757961783
+ - accuray: 0.6847133757961783
 
 Randomforest regression: 
- Mean squared error 24.61984726742346
- R-squared 0.9334463147156996
- Out of bounds score 0.9341150032752581
+- Mean squared error 24.61984726742346
+- R-squared 0.9334463147156996
+- Out of bounds score 0.9341150032752581
 
 
 To summarise: 
+For startes is logistic regression not really applicalbel on this task since it is not logical to catogorice price but i though it was fun to try atlest. 
 
+For the linjer regerssion it did ok in genreal but not very good with mulitble features 
+
+The randomfroest regerssen was the winner winner chicken dinner :)
+will be expored to joblib
