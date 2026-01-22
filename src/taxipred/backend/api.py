@@ -11,10 +11,10 @@ router = APIRouter(prefix="/api/data")
 
 
 class must_input(BaseModel):
-    km_lengt: float = Field()
+    km_lengt: float = Field(gt=0, lt=600) #figured no really long trips?
     passangers: int = Field(gt=1, lt=10)
     time_of_day: Literal["Moring", "Afternoon", "Evening"] = "Afternoon" # check if this i mean
-    time_of_week: Literal["Weekday", "Weekday"] = "Weekday"
+    time_of_week: Literal["Weekend", "Weekday"] = "Weekday"
 
 class pred_output(BaseModel):
    pred_taxi_price: float
@@ -27,9 +27,9 @@ def get_data():
 @router.post("/taxi_pred")
 def random_forset_ml(priceload: must_input):
     forest_data = pd.DataFrame(priceload.model_dump(), index=[0])
-    reg = joblib.load(MODEL_PATH /  "taxi_price_random.joblib") 
+    reg = joblib.load(MODEL_PATH) 
     pred_price = reg.predict(forest_data) 
     print(pred_price)
-    return{random_forset_ml: float(pred_price[0])}
+    return{"price_prediction": float(pred_price[0])}
 
 app.include_router(router=router)
