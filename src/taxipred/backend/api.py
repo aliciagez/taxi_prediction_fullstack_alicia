@@ -20,6 +20,6 @@ async def random_forset_ml(priceload:InputClass):
     reg = joblib.load(MODEL_PATH) 
     pred_price = reg.predict(forest_data) 
     print(pred_price)
-    return{"price_prediction": float(pred_price[0])}
+    return{"pred_taxi_price": float(pred_price[0])}
 
 app.include_router(router=router)
