@@ -3,19 +3,32 @@ import pandas as pd
 import joblib
 from taxipred.utils.constants import RANDOM_FOREST, MODEL_PATH
 from pydantic import BaseModel, Field
-from typing import Literal
+
 
 df = pd.read_csv(RANDOM_FOREST)
 app = FastAPI()
 router = APIRouter(prefix="/api/data")
 
 
-class must_input(BaseModel):
-    km_lengt: float = Field(gt=0, lt=600) #figured no really long trips?
-    passangers: int = Field(gt=1, lt=10)
-    time_of_day: Literal["Moring", "Afternoon", "Evening"] = "Afternoon" # check if this i mean
-    time_of_week: Literal["Weekend", "Weekday"] = "Weekday"
+#class must_input(BaseModel):
+    #km_lengt: float = Field(gt=0, lt=600) #figured no really long trips?
+    #passangers: int = Field(gt=1, lt=10)
+    #time_of_day: Literal["Moring", "Afternoon", "Evening"] = "Afternoon" # check if this i mean
+    #time_of_week: Literal["Weekend", "Weekday"] = "Weekday"
 
+class must_input(BaseModel):
+    Trip_Distance_km: float = Field(gt=0, lt=600) 
+    Passenger_Count: int = Field(gt=1, lt=10)
+    Base_Fare: float = Field()
+    Per_Km_Rate: float = Field
+    Per_Minute_Rate: float = Field()
+    Trip_Duration_Minutes: float = Field()
+    Day_of_Week_Weekend: int = Field()
+    Time_of_Day_Evening: int = Field()
+    Time_of_Day_Morning: int = Field()
+    Time_of_Day_Night: int = Field()
+
+    
 class pred_output(BaseModel):
    pred_taxi_price: float
 
