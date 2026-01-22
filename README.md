@@ -50,3 +50,11 @@ For the linjer regerssion it did ok in genreal but not very good with mulitble f
 
 The randomfroest regerssen was the winner winner chicken dinner :)
 will be expored to joblib
+
+
+to do 
+- do backend, data processing, def for default values a
+- predict in api
+- create get with router endpoints
+- rounter to group path operatiosn, better than app.get
+- do stremlit 

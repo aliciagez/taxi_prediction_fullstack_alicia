@@ -6,9 +6,15 @@ from pydantic import BaseModel, Field
 
 df = pd.read_csv(RANDOM_FOREST)
 app = FastAPI()
+router = APIRouter(prefix="/api/data")
 
-@app.get("/api/data")
+class info_input():
+
+@router.get("")
 def get_data():
     return df.to_dict(orient="records")
 
 
+@router.post("")
+def random_forset_ml():
+    pass
