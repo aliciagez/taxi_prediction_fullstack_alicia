@@ -1,5 +1,8 @@
 from pydantic import BaseModel, Field, model_validator
 from typing import Optional
+import pandas as pd
+
+
 
 class InputClass(BaseModel):
     Trip_Distance_km: float = Field(gt=0, lt=600) 
@@ -27,3 +30,4 @@ class InputClass(BaseModel):
 
 class OutputClass(BaseModel):
    pred_taxi_price: float
+

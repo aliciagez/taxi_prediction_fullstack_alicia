@@ -2,7 +2,7 @@ from fastapi import FastAPI, APIRouter
 import pandas as pd
 import joblib
 from taxipred.utils.constants import RANDOM_FOREST, MODEL_PATH
-from taxipred.backend.data_processing import OutputClass, InputClass
+from taxipred.backend.data_processing import OutputClass, InputClass 
 
 df = pd.read_csv(RANDOM_FOREST)
 app = FastAPI()

@@ -3,7 +3,8 @@ import httpx
 
 url_pred = "http://127.0.0.1:8000/api/data/apri/taxi_pred"
 
-st.markdown("Here you can predict taxi prices")
+st.markdown("# Here you can predict taxi prices")
+st.markdown("The values are filled in with some numbes that are the mean but do change them to suit you")
 
 with st.form("data_pred"):
     Trip_Distance_km = st.number_input("Trip_Distance_km")
