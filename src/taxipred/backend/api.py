@@ -7,7 +7,7 @@ from taxipred.backend.data_processing import OutputClass, InputClass
 df = pd.read_csv(RANDOM_FOREST)
 app = FastAPI()
 router = APIRouter(prefix="/api/data")
-
+reg = joblib.load(MODEL_PATH) 
 
 @router.get("")
 def get_data():
@@ -15,9 +15,8 @@ def get_data():
 
 
 @router.post("/apri/taxi_pred", response_model=OutputClass)
-async def random_forset_ml(priceload:InputClass):
-    forest_data = pd.DataFrame(priceload.model_dump(), index=[0])
-    reg = joblib.load(MODEL_PATH) 
+async def random_forset_ml(priceload:InputClass = None):
+    forest_data = pd.DataFrame([priceload.model_dump()], index=[0])
     pred_price = reg.predict(forest_data) 
     print(pred_price)
     return{"pred_taxi_price": float(pred_price[0])}
