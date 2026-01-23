@@ -57,4 +57,4 @@ Backend:
 I did the basemodel classes and some data validation in the data_procssesing. I decied to have all the featurs in so a user can fill in them all but i maked the time of day and time of week optional. As for the catagorical values i added validation/user ui so instead of puting in 1 and 0 they can just check a box with selectbox funktion for esay use. LLM was used on how to make the catogorical vales optinal so the program would not crash if time of day/time of week was not specifyed. Since they did not have that much inpact on the prediction i figuerd i could make them optional. 
 
 Frontend: 
-For the frontend with streamlit i wanted to have some diffrent pages so its just not one page and so the predicons could have their own page and one home and one for some metrics and plots. For the 
+For the frontend with streamlit i wanted to have some diffrent pages so its just not one page and so the predicons could have their own page and one home and one for the raw data and one home page with some introduction. I focused more on the pratical aspects then the estetics. 

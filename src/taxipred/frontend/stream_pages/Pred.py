@@ -7,11 +7,11 @@ st.markdown("Here you can predict taxi prices")
 
 with st.form("data_pred"):
     Trip_Distance_km = st.number_input("Trip_Distance_km")
-    Passenger_Count = st.number_input("Passenger_Count", min_value=1, max_value =9, step=1, value=1, format="%d")
-    Base_Fare  = st.number_input("Base_Fare")
-    Per_Km_Rate = st.number_input("Per_Km_Rat ")
-    Per_Minute_Rate = st.number_input("Per_Minute_Rate")
-    Trip_Duration_Minutes  = st.number_input("Trip_Duration_Minute")
+    Passenger_Count= st.number_input("Passenger_Count", min_value=1, max_value =9, step=1, value=1, format="%d")
+    Base_Fare  = st.number_input("Base_Fare", min_value=0.0, max_value=100.0, value=3.502989)
+    Per_Km_Rate = st.number_input("Per_Km_Rate", min_value=0.0, max_value=300.0, value=1.233316)
+    Per_Minute_Rate = st.number_input("Per_Minute_Rate", min_value=0.0, max_value=300.0, value=0.292916)
+    Trip_Duration_Minutes  = st.number_input("Trip_Duration_Minute", min_value=0.0, max_value=300.0, value=62.118116)
 
     Day_of_Week_Weekend = st.checkbox("Weekend?")
     Time_of_Day = st.selectbox("Time of day (Optional)", ["None", "Evening", "Morning", "Night"])
