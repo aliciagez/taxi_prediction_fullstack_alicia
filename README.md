@@ -48,13 +48,11 @@ For startes is logistic regression not really applicalbel on this task since it 
 
 For the linjer regerssion it did ok in genreal but not very good with mulitble features 
 
-The randomfroest regerssen was the winner winner chicken dinner :)
-will be expored to joblib
+The randomfroest regerssen was the winner, will be expored to joblib
 
+-------------------------------------------------------------------------------------------------------------------------------------
 
-to do 
-- do backend, data processing, def for default values a
-- predict in api
-- create get with router endpoints
-- rounter to group path operatiosn, better than app.get
-- do stremlit 
+Backend: 
+I did the basemodel classes and some data validation in the data_procssesing. I decied to have alla the featurs in so a user can fill in them all if they so choose if not defaut values will be added execat for distace and passenger4 count. I assume they would be the most imporat for a taxi comapy. As for the catagorical values i added validation/user ui so instead of puting in 1 and 0 they can jsut put in no or yes and if not a default will be added (LLM).
+
+Frontend: 
