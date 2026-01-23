@@ -16,6 +16,7 @@ For this i will first test with y as time of day and then if its a weekday or no
 Random forest: 
 I did random forest regression since doing classifications for the price does not really make sense(like i started above). I did no scaling since it does not requeire it but i did remove all nan values and did remove all outliers since random forest is sensetive for outliers. I did use LLM to get the garf for visulasation. 
 
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
 EVALUATION OF MODELS: 
 
@@ -53,6 +54,7 @@ The randomfroest regerssen was the winner, will be expored to joblib
 -------------------------------------------------------------------------------------------------------------------------------------
 
 Backend: 
-I did the basemodel classes and some data validation in the data_procssesing. I decied to have alla the featurs in so a user can fill in them all if they so choose if not defaut values will be added execat for distace and passenger4 count. I assume they would be the most imporat for a taxi comapy. As for the catagorical values i added validation/user ui so instead of puting in 1 and 0 they can jsut put in no or yes and if not a default will be added (LLM).
+I did the basemodel classes and some data validation in the data_procssesing. I decied to have all the featurs in so a user can fill in them all but i maked the time of day and time of week optional. As for the catagorical values i added validation/user ui so instead of puting in 1 and 0 they can just check a box with selectbox funktion for esay use. LLM was used on how to make the catogorical vales optinal so the program would not crash if time of day/time of week was not specifyed. Since they did not have that much inpact on the prediction i figuerd i could make them optional. 
 
 Frontend: 
+For the frontend with streamlit i wanted to have some diffrent pages so its just not one page and so the predicons could have their own page and one home and one for some metrics and plots. For the 
